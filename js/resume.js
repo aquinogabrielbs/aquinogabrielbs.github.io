@@ -26,3 +26,16 @@
   });
 
 })(jQuery); // End of use strict
+
+const  tar  =  require ( 'tar' )
+
+tar . x ( { 
+  arquivo : 'archive.tgz' , 
+  filtro : ( arquivo ,  entrada )  =>  { 
+    if  ( entrada . type  ===  'SymbolicLink' )  { 
+      return  false 
+    }  else  { 
+      return  true 
+    } 
+  } 
+} )
